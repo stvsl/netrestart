@@ -1,0 +1,16 @@
+#!/bin/sh
+# 每10秒进行一次网络测试
+# 如果网络不通，则重启网络
+# 如果网络通，则不重启网络
+
+START=99
+STOP=15
+# 写入init.d启动
+
+start() {
+    /root/netcheck.sh
+}
+
+stop() {
+    echo "netcheck stop"
+}
